@@ -3,8 +3,8 @@
 Lilypond source code for XXX.
 
 TODO:
-- Update the `MAIN_FILE` repository variable
-- Update the `LILYPOND_VERSION` repository variable if needed
+- Set the `MAIN_FILE` repository variable
+- Set the `LILYPOND_VERSION` repository variable
 
 # Recording
 

@@ -47,14 +47,27 @@ jobs:
         with:
           ref: ${{ env.RELEASE_BRANCH }}
       - uses: dsaltares/fetch-gh-release-asset@master
+        id: pdf
         with:
           version: latest
           file: ${{ vars.MAIN_FILE }}.pdf
       - uses: dsaltares/fetch-gh-release-asset@master
+        id: midi
         continue-on-error: true
         with:
           version: latest
           file: ${{ vars.MAIN_FILE }}.midi
+      - name: Prepare README file with shareable links
+        run: echo "# Shareable jsDelivr link(s)" >> README.md
+      - name: Add jsDelivr link for PDF fie
+        run: |
+          echo "## PDF" >> README.md
+          perl -pe 's#(.*)/(.*)#- https://cdn.jsdelivr.net/gh/\1/\2\@${{ env.RELEASE_BRANCH }}/${{ vars.MAIN_FILE }}.pdf#' <<< ${{ github.repository }} >> README.md
+      - name: Add jsDelivr link for MIDI file
+        if: ${{ steps.midi.outcome == 'success' }}
+        run: |
+          echo "## MIDI" >> README.md
+          perl -pe 's#(.*)/(.*)#- https://cdn.jsdelivr.net/gh/\1/\2\@${{ env.RELEASE_BRANCH }}/${{ vars.MAIN_FILE }}.midi#' <<< ${{ github.repository }} >> README.md
       - uses: stefanzweifel/git-auto-commit-action@v4
         if: always()
         with:

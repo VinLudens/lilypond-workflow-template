@@ -16,7 +16,8 @@ jobs:
 
   release-branch:
     uses: VinLudens/lilypond-reusable-workflows/.github/workflows/release-branch.yml@main
-    permissions: write-all
+    permissions:
+      contents: write
     with:
       MAIN_FILE: ${{ vars.MAIN_FILE }}
       RELEASE_BRANCH: release-assets

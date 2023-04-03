@@ -2,9 +2,6 @@
 
 name: Build Lilypond Project
 
-env:
-  LILYPOND_VERSION: 2.24.1
-
 on:
   push:
     branches: [ "main" ]
@@ -18,5 +15,5 @@ jobs:
   build:
     uses: VinLudens/lilypond-reusable-workflows/.github/workflows/compile-lilypond.yml@main
     with:
-      LILYPOND_VERSION: ${{ env.LILYPOND_VERSION }}
+      LILYPOND_VERSION: 2.24.1
       MAIN_FILE: ${{ vars.MAIN_FILE }}

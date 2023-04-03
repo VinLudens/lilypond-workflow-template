@@ -9,6 +9,7 @@ on:
   workflow_run:
     workflows: [Build Lilypond Project]
     types: [completed]
+    branches: [main]
 
 
 jobs:

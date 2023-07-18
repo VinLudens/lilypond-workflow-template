@@ -5,7 +5,7 @@ Using the template:
 
 # About
 
-[Lilypond](https://lilypond.org/) source code for XXX.
+[Lilypond](https://lilypond.org/) source code for `<DESCRIPTION_PLACEHOLDER>`.
 
 # Recording
 

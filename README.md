@@ -8,4 +8,10 @@ Using the template:
 
 # Recording
 
-- To be recorded
+<a href="https://youtu.be/IV-pdFUEAi8">
+  <img
+    src="https://markdown-videos.vercel.app/youtube/IV-pdFUEAi8?width=1920&height=1080"
+    alt="[Piano] Yakusoku – Horimiya ED - YouTube"
+    style="width: 100%"
+  />
+</a>
